@@ -1,7 +1,3 @@
-// ====================
-// DAY 1
-// ====================
-
 let taskName: string = "Study TypeScript";
 let minutes: number = 45;
 let isDone: boolean = false;
@@ -12,10 +8,6 @@ console.log(minutes);
 console.log(isDone);
 console.log(tags);
 
-
-// ====================
-// DAY 2
-// ====================
 
 function minutesToHours(mins: number): number {
     return mins / 60;
@@ -34,9 +26,6 @@ function label(
 }
 
 
-// ====================
-// DAY 3
-// ====================
 
 enum Priority {
     Low = "low",
@@ -87,15 +76,13 @@ const tasks: Task[] = [
 ];
 
 
-// Status union
+
 type Status = "todo" | "doing" | "done";
 
 let status: Status = "todo";
 
 console.log("Status:", status);
 
-
-// String or number narrowing
 function describe(value: string | number): string {
     if (typeof value === "string") {
         return `String value: ${value}`;
@@ -104,8 +91,6 @@ function describe(value: string | number): string {
     return `Number value: ${value}`;
 }
 
-
-// Generic function
 function firstItem<T>(items: T[]):T {
     if (items.length === 0) {
         throw new Error("Array is empty");
@@ -117,8 +102,6 @@ const firstTask = firstItem(tasks);
 
 console.log("First task:", firstTask);
 
-
-// Generic interface
 interface Result<T> {
     ok: boolean;
     data: T;
@@ -137,16 +120,12 @@ const messageResult: Result<string> = {
 console.log(taskResult);
 console.log(messageResult);
 
-
-// Check optional note
 for (const task of tasks) {
     if (task.note) {
         console.log(task.note);
     }
 }
 
-
-// Function examples
 console.log(minutesToHours(60));
 
 logTask("Study TypeScript");
@@ -158,17 +137,11 @@ console.log(
 console.log(describe("Hello"));
 console.log(describe(100));
 
-
-// ====================
-// DOM - DAY 3
-// ====================
-
 const list = document.getElementById("list");
 
 const input = document.getElementById("title") as HTMLInputElement;
 
 
-// Render tasks
 function render(items: Task[]): void {
 
     if (list === null) {
@@ -191,6 +164,4 @@ function render(items: Task[]): void {
     }
 }
 
-
-// Display tasks
 render(tasks);
